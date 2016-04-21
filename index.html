@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Data Science Capstone</title>
+  <meta name="description" content="">
+  <meta name="author" content="Taiki Sakai">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/reveal.min.css">
+  <link rel="stylesheet" href="libraries/frameworks/revealjs/css/theme/sky.css" id="theme">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" id="theme">
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->  <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section class='' data-state='' id='slide-1'>
+  <h2>Data Science Capstone</h2>
+  <h4>A text prediction algorithm for small devices</h4>
+
+<p> By Taiki Sakai </p>
+
+</section>
+<section class='class' data-state='' id='id'>
+  <h2>The Problem</h2>
+  <p>Text prediction is something that can just simply make our lives easier.
+In a world where time is money, something as seemingly insignificant as shortening the
+time it takes to write a text message can have a positive impact. By
+being able to accurately predict the next word a person wants to type, we
+can drastically reduce the time dedicated to this simple task. </p>
+
+</section>
+<section class='' data-state='' id='slide-3'>
+  <h2>The Solution</h2>
+  <p>I&#39;ve created an app that can quickly and accurately make these predictions. It 
+works by using the most recent two words the person typed to try and guess
+what will come next. Using a dataset of over <strong>one million</strong> lines of text
+from Twitter, new articles, and blogs, I generated a history of three- and
+two-word phrases that can be used to make predictions. This is probably easier
+to understand with some examples...</p>
+
+</section>
+<section class='' data-state='' id='slide-4'>
+  <h2>How it Works</h2>
+  <p><img src=left.png style=float:left;width:48%;height:48%">
+<img src=right.png style=float:right;width:48%;height:48%"></p>
+
+<p>Here you can see two examples. On the left, &#39;bake a&#39; is the start
+of many three-word phrases. The app shows the three most common ways to
+finish these two words. On the right, &#39;bake wall&#39; is not the start of
+many three-word phrases. When there are no three-word phrase, the model
+will instead guess based on two-word phrases. In this case &#39;wall street&#39;
+is a very common two word phrase, and so it is shown as an option.</p>
+
+</section>
+<section class='' data-state='' id='slide-5'>
+  <h2>Using the App</h2>
+  <p>Using the app is simple. Just open the web page, wait for &#39;Loading app... Complete!&#39;,
+then you can start typing your phrase and hit the predict button.
+You&#39;ll get a choice of three different words, and it tends to do a good job of making
+reasonable guesses. You probably noticed that it takes a while to load - this is not a problem!
+The website has to load ~150mb of data every time you open the app, but in practice
+this small amount of data will already be loaded on to your device. The important part
+is how fast it can make the prediction, and that part is <strong><em>fast!</em></strong></p>
+
+</section>
+    </div>
+  </div>
+</body>
+  <script src="libraries/frameworks/revealjs/lib/js/head.min.js"></script>
+  <script src="libraries/frameworks/revealjs/js/reveal.min.js"></script>
+  <script>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: Reveal.getQueryHash().theme || 'sky', 
+    transition: Reveal.getQueryHash().transition || 'default', 
+    dependencies: [
+    // Cross-browser shim that fully implements classList -
+    // https://github.com/eligrey/classList.js/
+      { src: 'libraries/frameworks/revealjs/lib/js/classList.js', condition: function() { return !document.body.classList;}},
+      // Zoom in and out with Alt+click
+      { src: 'libraries/frameworks/revealjs/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Speaker notes
+      { src: 'libraries/frameworks/revealjs/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      // Remote control your reveal.js presentation using a touch device
+      //{ src: 'libraries/frameworks/revealjs/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+  });
+  </script>  <!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+ 
+
+</html>
